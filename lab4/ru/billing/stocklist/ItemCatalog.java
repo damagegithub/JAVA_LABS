@@ -1,10 +1,12 @@
 package ru.billing.stocklist;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ItemCatalog {
-	private HashMap<Integer, GenericItem> catalog = new HashMap<Integer, GenericItem>();
-	private ArrayList<GenericItem> ALCatalog = new ArrayList<GenericItem>();
+	private Map<Integer, GenericItem> catalog = new HashMap<Integer, GenericItem>();
+	private List<GenericItem> ALCatalog = new ArrayList<GenericItem>();
 
 	public void addItem(GenericItem item) {
 		catalog.put(item.getID(),item); // Добавляем товар в HashMap
@@ -17,19 +19,20 @@ public class ItemCatalog {
 		}
 	}
 
-	public HashMap<Integer, GenericItem> getCatalog() {
+
+	public Map<Integer, GenericItem> getCatalog() {
 		return catalog;
 	}
 
-	public void setCatalog(HashMap<Integer, GenericItem> catalog) {
+	public void setCatalog(Map<Integer, GenericItem> catalog) {
 		this.catalog = catalog;
 	}
 
-	public ArrayList<GenericItem> getALCatalog() {
+	public List<GenericItem> getALCatalog() {
 		return ALCatalog;
 	}
 
-	public void setALCatalog(ArrayList<GenericItem> aLCatalog) {
+	public void setALCatalog(List<GenericItem> aLCatalog) {
 		ALCatalog = aLCatalog;
 	}
 
