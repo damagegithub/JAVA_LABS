@@ -2,6 +2,10 @@ import java.util.Date;
 
 
 public class FoodItem extends GenericItem {
+	public Date dateOfIncome = new Date();
+	public short expires;
+	
+
 	public FoodItem(String name, float price, FoodItem analog, Date date, short expires) {
 		this(name, price, expires);
 		this.dateOfIncome = date;
@@ -17,8 +21,7 @@ public class FoodItem extends GenericItem {
 		this.name=name;
 	}
 
-	public Date dateOfIncome = new Date();
-	public short expires;
+
 
 	@Override
 	void printAll() {
