@@ -6,7 +6,7 @@ public class JavaClass {
        Object  s="";
        if (i instanceof String)//false
            System.out.println("Integer instanceof String");
-       else if (s instanceof Integer)//true
+       else if (s instanceof Integer)//false
            System.out.println("String instanceof Integer");
 
 
