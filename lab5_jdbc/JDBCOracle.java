@@ -1,17 +1,12 @@
 package jdbc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class JDBCOracle {
-    public static void main (String[] args)
-    {
-        String url="jdbc:oracle:thin:@localhost:1521:test";	//test为数据库名称，1521为连接数据库的默认端口
-        String user="db_user2";
-        String password="111111";
+    public static void main(String[] args) {
+        String url = "jdbc:oracle:thin:@localhost:1521:test";    //test为数据库名称，1521为连接数据库的默认端口
+        String user = "db_user2";
+        String password = "111111";
 
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -30,25 +25,25 @@ public class JDBCOracle {
 
             rs = pstmt.executeQuery();
 
-            if(rs.next()){
+            if (rs.next()) {
                 System.out.println("user:" + rs.getString("user_id") + "  password" + rs.getString("password"));
-            }else{
-                System.out.println("not info for user " + rs.getString("user_id") );
+            } else {
+                System.out.println("not info for user " + rs.getString("user_id"));
             }
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally{
-            try{
-                if(rs != null){
+        } finally {
+            try {
+                if (rs != null) {
                     rs.close();
                 }
-                if(pstmt != null){
+                if (pstmt != null) {
                     pstmt.close();
                 }
-                if(conn != null){
+                if (conn != null) {
                     conn.close();
                 }
             } catch (SQLException e) {

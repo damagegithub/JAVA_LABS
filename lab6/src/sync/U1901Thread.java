@@ -1,7 +1,7 @@
 package sync;
 
 public class U1901Thread extends Thread {
-	U1901Bank bankWork;
+    U1901Bank bankWork;
     int intTrans;
     long lngSleep;
 
@@ -15,3 +15,4 @@ public class U1901Thread extends Thread {
         bankWork.calc(intTrans, lngSleep);
     }
 }
+

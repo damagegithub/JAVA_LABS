@@ -1,9 +1,9 @@
 package sync;
 
 public class U1901Bank {
-	public int intTo;
+    public int intTo;
     public int intFrom = 220;
-    
+
     synchronized void calc(int intTransaction, long lngTimeout) {
 
         System.out.println(
@@ -21,3 +21,4 @@ public class U1901Bank {
                 .println("After Thread: " + Thread.currentThread().getName() + ", From: " + intFrom + ", To: " + intTo);
     }
 }
+

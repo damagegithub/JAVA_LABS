@@ -1,21 +1,21 @@
 package ru.billing.client;
+
 import ru.billing.stocklist.ItemCatalog;
 import ru.itmo.CatalogLoadException;
 
 public class Main {
-	public static void main(String[] args) {
-		 System.out.println("\n------------------------------------------------------------\nLAB6\n");
-		 CatalogLoader loader = new CatalogStubLoader(); 
-		 ItemCatalog ic=new ItemCatalog();
-		 
-			try {
-				loader.load(ic);
-				loader.load(ic);
-				//ß·ß‡ß”ß‰ß‡ß‚ßﬂßÌß€ ID ß”ßÌßŸßÌß”ß—ß÷ß‰ ß⁄ß„ß‹ß›ßßÈß÷ßﬂß⁄ß÷
-			} catch (CatalogLoadException e) {
-				e.printStackTrace();
-			}
-			ic.printItems();
-	}
+    public static void main(String[] args) {
+        System.out.println("\n------------------------------------------------------------\nLAB6\n");
+        CatalogLoader loader = new CatalogStubLoader();
+        ItemCatalog ic = new ItemCatalog();
 
+        try {
+            loader.load(ic);
+            loader.load(ic);
+            // –ò—Å–∫–ª—é—á–µ–Ω–∏–µ
+        } catch (CatalogLoadException e) {
+            e.printStackTrace();
+        }
+        ic.printItems();
+    }
 }

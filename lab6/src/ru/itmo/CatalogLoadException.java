@@ -1,7 +1,6 @@
 package ru.itmo;
 
 import java.io.FileNotFoundException;
-import java.lang.Exception;
 
 @SuppressWarnings("serial")
 public class CatalogLoadException extends Exception {
@@ -9,13 +8,13 @@ public class CatalogLoadException extends Exception {
         super(errorMessage);
     }
 
-	public CatalogLoadException(ItemAlreadyExistsException e) {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
-		super(e);
-	}
+    public CatalogLoadException(ItemAlreadyExistsException e) {
+        // TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
+        super(e);
+    }
 
-	public CatalogLoadException(FileNotFoundException e) {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
-		super(e);
-	}
+    public CatalogLoadException(FileNotFoundException e) {
+        // TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
+        super(e);
+    }
 }

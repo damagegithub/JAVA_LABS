@@ -1,21 +1,20 @@
 class FirstClass {
-    Integer x ;
+    Integer x;
     float f;
-    BigInteger bi ;
+    BigInteger bi;
     def binding;
 
-    FirstClass(int x,float f, BigInteger bi){
+    FirstClass(int x, float f, BigInteger bi) {
         this.x = x;
-        this.f= f;
-        this.bi=bi;
+        this.f = f;
+        this.bi = bi;
     }
 
-    FirstClass(){
-        this.binding = new Binding(x:100,f:1.5,bi:2g);
+    FirstClass() {
+        this.binding = new Binding(x: 100, f: 1.5, bi: 2g);
     }
 
-    Integer getInt()
-    {
-       x;
+    Integer getInt() {
+        x;
     }
 }

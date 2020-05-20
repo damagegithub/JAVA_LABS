@@ -3,21 +3,21 @@ package jdbc;
 import java.sql.Date;
 
 public class MusicItem {
-    String ITEM_ID ;
-    String Title ;
-    String Artist ;
-    Date ReleaseDate ;
-    String ListPrice ;
-    String Price  ;
-    String Version ;
-    public MusicItem(String id,String Title, String Artist , Date ReleaseDate ,String  ListPrice , String Price  , String Version )
-    {
-        this.ITEM_ID=id;
-        this.Title=Title;
-        this.Artist=Artist;
-        this.ReleaseDate=ReleaseDate;
-        this.ListPrice=ListPrice;
-        this.Price=Price;
-        this.Version=Version;
+    String itemId;
+    String title;
+    String artist;
+    Date releaseDate;
+    String listPrice;
+    String price;
+    String version;
+
+    public MusicItem(String id, String title, String artist, Date releaseDate, String listPrice, String price, String version) {
+        this.itemId = id;
+        this.title = title;
+        this.artist = artist;
+        this.releaseDate = releaseDate;
+        this.listPrice = listPrice;
+        this.price = price;
+        this.version = version;
     }
 }

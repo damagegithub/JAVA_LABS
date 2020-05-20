@@ -12,10 +12,11 @@ public class ItemDaoMain {
         //Упражнение1-4
         i.searchByKeyword("of");
         i.searchByKeyword("Gay");
-        List<MusicItem> musicItems=i.searchById(1);
-        for (MusicItem x:musicItems
-        ) {System.out.println(x.ITEM_ID + "\t" + x.Title + "\t" + x.Artist + "\t"
-                + x.ReleaseDate + "\t" + x.ListPrice + "\t" + x.Price + "\t" + x.Version);
+        List<MusicItem> musicItems = i.searchById(1);
+        for (MusicItem x : musicItems
+        ) {
+            System.out.println(x.itemId + "\t" + x.title + "\t" + x.artist + "\t"
+                    + x.releaseDate + "\t" + x.listPrice + "\t" + x.price + "\t" + x.version);
 
         }
         i.create(musicItems);
