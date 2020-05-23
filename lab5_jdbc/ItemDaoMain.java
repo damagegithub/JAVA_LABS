@@ -5,7 +5,7 @@ import java.util.List;
 public class ItemDaoMain {
     public static void main(String[] args) {
 
-        ItemDAO i = new ItemDAO("jdbc:derby://localhost:1527/JavaTunesDB;user=db_user1;password=111111;create=tru");
+        ItemDAO i = new ItemDAO("jdbc:derby://localhost:1527/JavaTunesDB;user=db_user1;password=111111;create=true");
 
         //Упражнение1-3
         i.searchById(1);

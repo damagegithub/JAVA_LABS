@@ -10,6 +10,7 @@ public class JDBCTest {
     public static void main(String[] args) {
         //Упражнение1-2
         Connection conn = null;
+
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
         } catch (ClassNotFoundException e) {

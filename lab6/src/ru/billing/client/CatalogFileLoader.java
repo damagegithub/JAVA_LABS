@@ -8,6 +8,7 @@ import ru.itmo.ItemAlreadyExistsException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -20,16 +21,16 @@ public class CatalogFileLoader implements CatalogLoader {
 
     @Override
     public void load(ItemCatalog cat) throws CatalogLoadException {
-        // TODO 自动生成的方法存根
         File f = new File(fileName);
-        FileInputStream fis;
+        FileInputStream fis = null;
         String line;
+        Scanner scanner = null;
         try {
             fis = new FileInputStream(f);
-            Scanner s = new Scanner(fis);
+            scanner = new Scanner(fis);
 
-            while (s.hasNextLine()) {
-                line = s.nextLine();
+            while (scanner.hasNextLine()) {
+                line = scanner.nextLine();
                 if (line.length() == 0) {
                     break;
                 }
@@ -46,6 +47,17 @@ public class CatalogFileLoader implements CatalogLoader {
         } catch (ItemAlreadyExistsException e) {
             e.printStackTrace();
             throw new CatalogLoadException(e);
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (scanner != null) {
+                scanner.close();
+            }
         }
     }
 }

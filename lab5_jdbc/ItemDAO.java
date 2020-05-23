@@ -1,13 +1,13 @@
 package jdbc;
 
-
+import java.io.Closeable;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.sql.DriverManager.getConnection;
 
-public class ItemDAO {
+public class ItemDAO implements Closeable {
     String filePath;
     String url;
     PreparedStatement pst = null;
@@ -103,14 +103,22 @@ public class ItemDAO {
 
     }
 
-    void close() {
-        try {
-            this.conn.close();
-            this.pst.close();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+    private void close(AutoCloseable closeable) {
+        //Class "PreparedStatement" "ResultSet" "Connection" they all "extends AutoCloseable"
+        if (closeable != null) {
+            try {
+                closeable.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-
     }
 
+    @Override
+    public void close() {
+        //использовать private методы
+        close(pst);
+        close(ret);
+        close(conn);
+    }
 }
