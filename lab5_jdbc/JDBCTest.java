@@ -12,23 +12,12 @@ public class JDBCTest {
         //Упражнение1-2
         Connection conn = null;
         String url = "jdbc:derby://localhost:1527/JavaTunesDB;user=db_user1;password=111111";
-
         try {
-            //найти драйвер, который понимает данный URL.
-            getDriver(url);
-        } catch (SQLException throwables) {
-            //Подходящий драйвер не найден
-            throwables.printStackTrace();
-            return;
-        }
-        /*
-        try {
-            //class ClientDriver extends ClientAutoloadedDriver
             Class.forName("org.apache.derby.jdbc.ClientDriver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        */
+
         try {
             conn = getConnection(url);
             DatabaseMetaData dbmd = conn.getMetaData();
