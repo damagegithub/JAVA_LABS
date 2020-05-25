@@ -48,7 +48,7 @@ public class ItemDAO implements Closeable {
             return result;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }finally {
+        } finally {
             close(pst);
             close(ret);
         }
@@ -74,7 +74,7 @@ public class ItemDAO implements Closeable {
             return result;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }finally {
+        } finally {
             close(pst);
             close(ret);
         }
@@ -105,7 +105,7 @@ public class ItemDAO implements Closeable {
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }finally {
+        } finally {
             close(pst);
         }
 
